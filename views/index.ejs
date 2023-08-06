@@ -1,0 +1,11 @@
+<div class="todolist">
+<%- include("partials/header.ejs") %>
+
+<% if(locals.labelname){var i=0; labelname.forEach((label)=>{%>
+    <div class="task">
+        <%- label %>
+        <form class="material-symbols-outlined" action="/delete" method="post"> <input type="number"name="num" value="<%=i%>" style="display: none;"> <button type="submit"> <span class="material-symbols-outlined">delete</span></button></form>
+    </div>
+<% i++;})}%>
+</div>
+<script src="./../script.js"></script>
